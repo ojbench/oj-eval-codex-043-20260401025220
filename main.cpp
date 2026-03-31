@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 namespace LIST {
@@ -9,9 +9,9 @@ struct NODE {
     NODE* prev;
 };
 
-static NODE* head = nullptr;
-static NODE* tail = nullptr;
-static int len = 0;
+NODE* head = nullptr;
+NODE* tail = nullptr;
+int len = 0;
 
 void Pre() {
     head = nullptr;
@@ -20,7 +20,7 @@ void Pre() {
 }
 
 // Move to node at index i (0-based). Assumes 0 <= i < len.
-static NODE* move(int i) {
+NODE* move(int i) {
     if (i < 0 || i >= len) return nullptr;
     if (i <= len / 2) {
         NODE* cur = head;
@@ -159,4 +159,3 @@ int main() {
     LIST::Clear();
     return 0;
 }
-
